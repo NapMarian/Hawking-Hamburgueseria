@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(del \"C:\\Users\\maria\\Downloads\\hawkins-burger\\next.config.mjs\")",
+      "Bash(del \"C:\\Users\\maria\\Downloads\\hawkins-burger\\next-env.d.ts\")",
+      "Bash(rm:*)",
+      "Bash(mkdir:*)",
+      "Bash(cp:*)",
+      "Bash(npm install)",
+      "Bash(npm run dev:*)",
+      "Bash(mv:*)",
+      "Bash(find:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

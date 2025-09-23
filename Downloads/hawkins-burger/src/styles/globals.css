@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  /* Enhanced 50's Neon Pink Theme - IMPROVED READABILITY */
+  --background: #0a0a0a; /* Very dark background */
+  --foreground: #ffffff; /* Pure white text for maximum contrast */
+  --card: #1a1a1a; /* Slightly lighter card background */
+  --card-foreground: #ffffff; /* Pure white card text */
+  --popover: #1a1a1a;
+  --popover-foreground: #ffffff;
+  --primary: #ff1493; /* Bright neon pink */
+  --primary-foreground: #ffffff; /* White text on pink */
+  --secondary: #ff6b35; /* Bright neon orange */
+  --secondary-foreground: #ffffff; /* White text on orange */
+  --muted: #2a2a2a; /* Lighter muted background */
+  --muted-foreground: #cccccc; /* Much lighter muted text */
+  --accent: #00bfff; /* Bright cyan blue */
+  --accent-foreground: #ffffff; /* White text on blue */
+  --destructive: #ff4444;
+  --destructive-foreground: #ffffff;
+  --border: #333333; /* Lighter border for visibility */
+  --input: #2a2a2a;
+  --ring: #ff1493;
+  --chart-1: #ff1493;
+  --chart-2: #ff6b35;
+  --chart-3: #00bfff;
+  --chart-4: #9966ff;
+  --chart-5: #ff69b4;
+  --radius: 0.75rem;
+  --sidebar: #1a1a1a;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #ff1493;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #2a2a2a;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #333333;
+  --sidebar-ring: #ff1493;
+  --font-script: "Dancing Script";
+}
+
+.dark {
+  --background: oklch(0.01 0.02 320);
+  --foreground: oklch(0.99 0.05 320);
+  --card: oklch(0.03 0.03 320);
+  --card-foreground: oklch(0.99 0.05 320);
+  --popover: oklch(0.03 0.03 320);
+  --popover-foreground: oklch(0.99 0.05 320);
+  --primary: oklch(0.85 0.32 330);
+  --primary-foreground: oklch(0.01 0.02 320);
+  --secondary: oklch(0.8 0.28 45);
+  --secondary-foreground: oklch(0.01 0.02 320);
+  --muted: oklch(0.08 0.05 320);
+  --muted-foreground: oklch(0.75 0.08 320);
+  /* Updated dark mode accent from cyan to blue */
+  --accent: oklch(0.8 0.28 240); /* Blue instead of cyan */
+  --accent-foreground: oklch(0.01 0.02 320);
+  --destructive: oklch(0.7 0.28 15);
+  --destructive-foreground: oklch(0.99 0.05 320);
+  --border: oklch(0.12 0.08 320);
+  --input: oklch(0.08 0.05 320);
+  --ring: oklch(0.85 0.32 330);
+}
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    color: #ffffff !important; /* Force white text everywhere */
+  }
+  
+  /* Force readable text for common elements */
+  p, span, div, a, button {
+    color: inherit;
+  }
+  
+  /* Ensure muted text is still readable */
+  .text-muted-foreground {
+    color: #cccccc !important;
+  }
+  
+  /* Make sure card content is readable */
+  .bg-card {
+    background-color: #1a1a1a !important;
+    color: #ffffff !important;
+  }
+}
+
+/* Enhanced Authentic Retro Neon Effects - IMPROVED READABILITY */
+.neon-text {
+  color: #ffffff !important; /* Force white text for readability */
+  text-shadow: 
+    0 0 5px #ff1493, 
+    0 0 10px #ff1493, 
+    0 0 15px #ff1493, 
+    0 0 20px #ff1493,
+    0 1px 0 #000000; /* Black outline for better contrast */
+  font-weight: bold;
+}
+
+.neon-text-strong {
+  color: #ffffff !important; /* Force white text for maximum readability */
+  text-shadow: 
+    0 0 5px #ff1493, 
+    0 0 10px #ff1493, 
+    0 0 15px #ff1493, 
+    0 0 20px #ff1493,
+    0 0 25px #ff1493,
+    0 2px 0 #000000; /* Stronger black outline */
+  font-weight: bold;
+}
+
+.neon-border {
+  box-shadow: 
+    0 0 5px #ff1493, 
+    0 0 10px #ff1493, 
+    0 0 15px #ff1493, 
+    inset 0 0 5px #ff1493;
+  border: 1px solid #ff1493;
+}
+
+.retro-pattern {
+  /* Dark background as specified - very dark navy/black */
+  background: #0a0a0a;
+  position: relative;
+}
+
+.retro-pattern::before {
+  /* Removed overlay for cleaner dark gradient */
+  display: none;
+}
+
+.retro-pattern > * {
+  /* Ensure content appears above overlay */
+  position: relative;
+  z-index: 2;
+}
+
+/* Script font for elegant branding like "Hawkins" reference */
+.script-text {
+  font-family: var(--font-script), cursive;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Bold condensed font for impact text like "BARBACOA" */
+.impact-text {
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-stretch: condensed;
+}
+
+/* Enhanced pulsing animation for crisp neon tube effect */
+@keyframes neon-pulse {
+  0%,
+  100% {
+    text-shadow: 0 0 2px #ff1493, 0 0 4px #ff1493, 0 0 6px #ff1493, 0 0 8px #ff00ff;
+  }
+  50% {
+    text-shadow: 0 0 2px #ff1493, 0 0 4px #ff1493, 0 0 6px #ff1493, 0 0 8px #ff00ff, 0 0 10px #ff00ff;
+  }
+}
+
+.neon-pulse {
+  animation: neon-pulse 2s ease-in-out infinite;
+}
+
+/* Enhanced neon border for stronger glow effect */
+.neon-border-strong {
+  box-shadow: 0 0 4px #ff1493, 0 0 8px #ff1493, 0 0 12px #ff1493, inset 0 0 4px #ff1493;
+}
+
+/* Adding 3D effects for the papas fritas hero image */
+.hero-3d {
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.papas-3d {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 16px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 20, 147, 0.3);
+  transform: rotateY(8deg) rotateX(3deg);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  object-fit: cover;
+}
+
+.papas-3d:hover {
+  transform: rotateY(-8deg) rotateX(-3deg) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 20, 147, 0.4);
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .papas-3d {
+    transform: rotateY(5deg) rotateX(2deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 20, 147, 0.2);
+  }
+  
+  .papas-3d:hover {
+    transform: rotateY(-5deg) rotateX(-2deg) scale(1.01);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 20, 147, 0.3);
+  }
+}
